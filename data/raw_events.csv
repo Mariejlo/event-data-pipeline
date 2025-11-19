@@ -1,0 +1,13 @@
+user_id,session_id,event_timestamp,event_type,feature_name,plan_type,is_active
+1,101,2025-01-01 08:32:00,login,,pro,True
+1,101,2025-01-01 08:33:12,feature_use,time_entry,pro,True
+1,101,2025-01-01 08:34:55,feature_use,expense_export,pro,True
+2,202,2025-01-02 10:05:44,login,,trial,True
+2,202,2025-01-02 10:06:01,feature_use,time_entry,trial,True
+2,202,2025-01-02 10:06:30,error,,trial,True
+3,303,2024-12-15 09:14:22,login,,basic,False
+3,303,2024-12-15 09:16:45,feature_use,time_entry,basic,False
+4,404,2025-01-03 12:01:00,login,,pro,True
+4,404,2025-01-03 12:02:10,feature_use,time_entry,pro,True
+4,404,2025-01-03 12:08:20,feature_use,project_dashboard,pro,True
+5,505,2024-11-02 07:45:10,login,,basic,False
