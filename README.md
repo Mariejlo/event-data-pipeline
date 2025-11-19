@@ -1,60 +1,100 @@
 # Event Data Pipeline mini  Project
+This project is a compact example of how I structure data ingestion, transformation, and user-behaviour analysis in Python. The goal was to create a simple, maintainable, and extensible pipeline that reflects how internal data tools are designed in modern engineering teams.
 
-This mini-project demonstrates the core  skills involved in building a clean, maintainable, and well-structured event-data pipeline using Python.  
-It showcases practical abilities in:
+Although small in size, the project follows the same principles I apply in larger systems: clear modelling, separation of responsibilities, predictable folder structure, and documentation that makes collaboration easier for others.
+---
 
-- Data collection and ingestion  
-- Transformation into structured domain models  
-- Maintainable and modular Python code  
-- Basic user-behaviour analysis and product-focused data analysis   
-- Clear communication of insights  
-- Engineering-ready documentation and structure  
 
+## 1. Project Overview
+
+The repository contains a minimal pipeline that:
+
+- ingests raw product event data
+
+- validates and transforms it into structured domain objects
+
+- produces a small set of behavioural insights
+
+- keeps the codebase clean, modular, and ready to extend
+
+This is the type of foundation typically used when building internal analytics tools, behaviour-tracking components, or data collection services that need to grow over time.
 
 ---
 
-## 📌 1. Project Structure
+## 2. Project Structure
 
 
 This structure mirrors common patterns used in production-oriented data engineering and internal analytics tooling.
 
-project/
+event-data-pipeline/
 │
 ├── data/
-│ └── raw_events.csv
+│   └── raw_events.csv
 │
 ├── src/
-│ ├── data_tool.py
-│ ├── models.py
-│ └── init.py
+│   ├── models.py          # Domain model (UserEvent)
+│   ├── ingestion.py       # Ingestion + CSV loading
+│   ├── analysis.py        # Behaviour analysis functions
+│   └── data_tool.py       # Entry point script
 │
+├── .gitignore
 └── README.md
+
+The structure mirrors a typical internal tool layout:
+
+- models.py holds domain objects
+
+- ingestion.py handles data loading
+
+- analysis.py contains business logic
+
+- data_tool.py serves as the execution layer
+
+Keeping these areas separate makes the code easier to test, update, and maintain.
 
 ---
 
-## 📌 2. What the Tool Does
+## 3. How the Pipeline works
 
-1. Loads raw event-level product data from `raw_events.csv`  
-2. Validates and converts each row into a `UserEvent` **domain object** (Django-style)  
-3. Performs relevant basic analytics, including:  
-   - feature usage  
-   - active vs inactive users  
-   - churn indicators  
-   - session counts  
-   - platform behaviour patterns  
-4. Prints a summary report suitable for technical and non-technical stakeholders
+Step 1: Load raw event data
+
+A simple CSV (placeholder data) is used to simulate product event logs.
+
+
+Step 2: Convert each row into a domain model
+
+The UserEvent dataclass provides a clean, Django-style representation of each event.
+
+
+Step 3: Run behavioural analysis
+
+The analysis module outputs:
+
+- user activity patterns
+
+- feature usage
+
+- basic churn indicators
+
+- sign-in frequencies
+
+- platform preferences
+
+Step 4: Print a readable summary
+
+The script generates a concise terminal report suitable for a product manager, backend lead, or commercial stakeholder.
 
 The goal is to replicate a simplified end-to-end workflow used to understand user behaviour and guide product or operational decisions.
 
 ---
 
-## 📌 3. How to Run the Tool
+## 4. How to Run the project
 
 Activate the virtual environment :
 
 ```bash
 venv\Scripts\activate
-
+´´´
 Run the script:
 python src/data_tool.py
 
